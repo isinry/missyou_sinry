@@ -1,0 +1,37 @@
+
+
+
+tag：
+西瓜 = 2
+榴莲 = 4
+芒果 = 8
+橘子 = 16
+柚子 = 32
+
+比如
+sinry1拥有【西瓜、芒果】，则tag = 10
+sinry2拥有【西瓜】，则tag = 2
+sinry3拥有【西瓜、榴莲、芒果】，则tag = 14
+sinry4拥有【橘子】，则tag = 16
+sinry5拥有【柚子】，则tag = 32
+
+id = 1, name = sinry1, tag = 10
+id = 2, name = sinry2, tag = 2
+id = 3, name = sinry3, tag = 14
+id = 4, name = sinry4, tag = 16
+id = 5, name = sinry5, tag = 32
+
+例： 我要查出拥有西瓜的人？
+select * from test where tag & 2 = 2;
+
+例： 我要查出拥有橘子的人？
+select * from test where tag & 16 = 16;
+
+
+例 select * from test where tag & 10 = 10
+得 id = 1
+
+例 select * from test where tag & 2 = 2
+得 id = 1、id = 2、id = 3
+
+

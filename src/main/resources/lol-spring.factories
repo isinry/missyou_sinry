@@ -1,0 +1,4 @@
+#auto
+#com.sinry.missyou.api.v1.BannerController
+#com.sinry.missyou.sample.configuration.DatabaseConfiguration
+#com.sinry.missyou.sample.configuration.HeroConfiguration
