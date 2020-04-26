@@ -1,0 +1,21 @@
+#集群名称，同个集群名称一致，所有节点都需要配置
+#cluster.name: cluster-name
+#节点名称，每个节点名都唯一
+#node.name: node-name
+#是否有资格成为主节点。真正的主节点需要经过选举后才产生。
+#node.master: true
+#是否是数据节点。
+#node.data: true
+#数据与日志路径，自定义，需注意路径文件的权限（es是不能使用root用户起的）
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/logs
+#设定访问的地址与端口，默认无法公开访问，公开访问即配置为0.0.0.0
+network.host: 0.0.0.0
+http.port: 9200
+#集群地址设置，可以配置集群的主机地址，配置之后集群的主机间可以自动发现。
+#比如我要发现的另一个节点的ip是196.168.33.192
+discovery.seed_hosts: ["192.168.1.105"]
+#节点数目设置。为了防止“脑裂”，通常需配置最少主节点数目，通常为  (可成为主节点的主机数目 / 2) + 1
+#discovery.zen.minimum_master_nodes: 2
+#配置当最少几个节点回复之后，集群就正常工作
+#gateway.recover_after_nodes: 2

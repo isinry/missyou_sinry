@@ -1,0 +1,134 @@
+version: '3' #版本号
+services:
+  elasticsearch: #服务名称，自定义
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION} #使用镜像
+    container_name: elasticsearch #服务名称
+    volumes:
+      - ~/docker/data/elasticsearch/logs/:/usr/share/elasticsearch/logs/
+      - ~/docker/data/elasticsearch/data/:/usr/share/elasticsearch/data/
+      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro #ro表示只读
+    ports:
+      - "9200:9200" #暴露的端口信息和docker run -d -p 80:80一样
+      - "9300:9300"
+    restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
+    environment: #设置镜像变量，它可以保存变量到镜像里面
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}${ELASTIC_PASSWORD}
+    networks:
+      - elk
+
+  logstash: #服务名称，自定义
+    image: docker.elastic.co/logstash/logstash:${ELK_VERSION} #使用镜像
+    container_name: logstash #服务名称
+    volumes:
+      - ./logstash/logstash.yml:/usr/share/logstash/config/logstash.yml:ro #ro表示只读
+      - ~/docker/data/logstash/pipeline:/usr/share/logstash/pipeline
+      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5044:5044" #暴露的端口信息和docker run -d -p 80:80一样
+      - "9600:9600"
+    restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
+    environment: #设置镜像变量，它可以保存变量到镜像里面
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+    links:
+      - elasticsearch
+    networks:
+      - elk
+    depends_on:  #标签解决了容器的依赖、启动先后的问题
+      - elasticsearch #此处优先执行es
+
+  kibana: #服务名称，自定义
+    image: docker.elastic.co/kibana/kibana:${ELK_VERSION} #使用镜像
+    container_name: kibana #服务名称
+    volumes:
+      - ~/docker/data/kibana/config:/usr/share/kibana/config #ro表示只读
+      - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - "5601:5601" #暴露的端口信息和docker run -d -p 80:80一样
+    restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
+    networks:
+      - elk
+    depends_on:  #标签解决了容器的依赖、启动先后的问题
+      - elasticsearch #此处优先执行es
+
+#  filebeat:
+#    image: docker.elastic.co/beats/filebeat:${ELK_VERSION}
+#    container_name: filebeat #服务名称
+#    command: filebeat setup -e
+#    volumes:
+#      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+#      - ~/docker/data/filebeat/module.d:/usr/share/filebeat/module.d
+#    networks:
+#      - elk
+#    depends_on:
+#      - logstash
+
+  redis:
+    image: docker.io/redis:latest
+    container_name: redis
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    ports:
+      - "6379:6379"
+    volumes:
+      - ~/docker/data/redis/data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    depends_on:  #标签解决了容器的依赖、启动先后的问题
+      - elasticsearch #此处优先执行es
+    restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
+    networks:
+      - elk
+
+  mysql:
+    image: docker.io/mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASS: ${MYSQL_PASS}
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    volumes:
+      - ~/docker/data/mysql/db:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ~/docker/data/mysql/init:/docker-entrypoint-initdb.d/
+    depends_on:  #标签解决了容器的依赖、启动先后的问题
+      - elasticsearch #此处优先执行es
+    restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
+    networks:
+      - elk
+
+#  jdk8:
+#    image: openjdk:8
+#    container_name: jdk8
+#    environment:
+#      # 指定时区
+#      - TZ="Asia/Shanghai"
+#    ports:
+#      - "8081:8081"
+#      - "8080:8080"
+#    links:
+#      - mysql
+#    # 其他参数
+#    command: [
+#      'java',
+#      '-Xmx200m',
+#      '-jar',
+#      'missyou_sinry.jar',
+#      '--spring.datasource.url=jdbc:mysql://mysql:3306/sleeve?characterEncoding=utf-8&serverTimezone=GMT%2B8'
+#    ]
+#    volumes:
+#      # 本地jar包路径
+#      - ~/project/java/work/code/missyou_sinry/target/missyou-0.0.1-SNAPSHOT.jar:/missyou_sinry.jar
+#      # 指定容器时间为宿主机时间
+##      - /etc/localtime:/etc/localtime
+#    # 重启机制
+#    restart: always
+#    depends_on:  #标签解决了容器的依赖、启动先后的问题
+#      - mysql #此处优先执行es
+#    networks:
+#        - elk
+
+networks:
+  elk:
+    driver: bridge

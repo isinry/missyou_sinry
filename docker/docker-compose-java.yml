@@ -1,0 +1,32 @@
+version: '3' #版本号
+services:
+  jdk8:
+    image: openjdk:8
+    container_name: jdk8
+    environment:
+      # 指定时区
+      - TZ="Asia/Shanghai"
+    ports:
+      - "8080:8080"
+    # 其他参数
+    command: [
+      'java',
+      '-Xmx200m',
+      '-jar',
+      'missyou_sinry.jar',
+      '--spring.datasource.url=jdbc:mysql://mysql:3306/sleeve?characterEncoding=utf-8&serverTimezone=GMT%2B8',
+      '--spring.profiles.active=prod'
+    ]
+    volumes:
+      # 本地jar包路径
+      - ~/project/java/work/code/missyou_sinry/target/missyou-0.0.1-SNAPSHOT.jar:/missyou_sinry.jar
+      # 指定容器时间为宿主机时间
+#      - /etc/localtime:/etc/localtime
+    # 重启机制
+    restart: always
+    networks:
+        - elk
+
+networks:
+  elk:
+    driver: bridge

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="60 seconds" debug="false">
+    <!--    <include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss} | %X{traceId} | %-5level | %thread | %logger | %msg%n </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+            <destination>localhost:9600</destination>
+<!--        <destination>${logstash.host}:${logstash.port}</destination>-->
+<!--        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />-->
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp/>
+                <version/>
+                <pattern>
+                    <pattern>
+                        {
+                            "level": "%level",
+                            "logger": "%logger",
+                            "trace_id": "%X{traceId}",
+                            "app_key": "%X{app_key}",
+                            "env": "%X{env}",
+                            "host": "%X{host}",
+                            "thread_name": "%X{thread_name}",
+                            "request_uri": "%X{request_uri}",
+                            "request_path": "%X{request_path}",
+                            "request_method": "%X{request_method}",
+                            "device_type": "%X{device_type}",
+                            "user_agent": "%X{user_agent}",
+                            "message": "%msg"
+                        }
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+
+<!--        防止超时-->
+        <keepAliveDuration>5 minutes</keepAliveDuration>
+    </appender>
+
+
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="LOGSTASH"/>
+    </root>
+</configuration>
