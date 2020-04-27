@@ -30,6 +30,7 @@ services:
     restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
     environment: #设置镜像变量，它可以保存变量到镜像里面
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+    command:
     links:
       - elasticsearch
     networks:
