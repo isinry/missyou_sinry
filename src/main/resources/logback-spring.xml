@@ -7,6 +7,21 @@
         </encoder>
     </appender>
 
+
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--日志文件输出的文件名-->
+<!--        <file>springboot-logger-%d{yyyy-MM-dd}.log</file>-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--归并日志文件输出的文件名-->
+            <fileNamePattern>
+                ${LOG_PATH}/springboot-%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
             <destination>localhost:9600</destination>
 <!--        <destination>${logstash.host}:${logstash.port}</destination>-->
@@ -42,9 +57,9 @@
     </appender>
 
 
-
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="LOGSTASH"/>
+        <appender-ref ref="ROLLING"/>
     </root>
 </configuration>

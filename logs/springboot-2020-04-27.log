@@ -1,0 +1,2 @@
+20:37:46.686 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT on 52e459eaed35 with PID 1 (/missyou_sinry.jar started by root in /)
+20:37:46.740 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: prod

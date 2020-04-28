@@ -30,7 +30,7 @@ services:
     restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
     environment: #设置镜像变量，它可以保存变量到镜像里面
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
-    command:
+#    command:
     links:
       - elasticsearch
     networks:
@@ -52,17 +52,46 @@ services:
     depends_on:  #标签解决了容器的依赖、启动先后的问题
       - elasticsearch #此处优先执行es
 
-#  filebeat:
-#    image: docker.elastic.co/beats/filebeat:${ELK_VERSION}
-#    container_name: filebeat #服务名称
-#    command: filebeat setup -e
+  zookeeper:
+    image: zookeeper
+    container_name: zookeeper
 #    volumes:
-#      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+#      -
+    ports:
+      - "2181:2181"
+    restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
+#    environment:
+#      ZOO_MY_ID: 1
+#      ZOO_SERVERS: server.1=zoo1:2888:2888
+
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    links:
+      - zookeeper
+    ports:
+      - "9092:9092"
+#    volumes:
+#      - /etc/localtime:/etc/localtime
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: ${HOST}:2181
+      KAFKA_ADVERTISED_HOST_NAME: ${HOST}
+      KAFKA_ADVERTISED_PORT: 9092
+    depends_on:
+      - zookeeper
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:${ELK_VERSION}
+    container_name: filebeat #服务名称
+    command: --strict.perms=false
+    volumes:
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
 #      - ~/docker/data/filebeat/module.d:/usr/share/filebeat/module.d
-#    networks:
-#      - elk
-#    depends_on:
-#      - logstash
+      - /var/lib/docker/containers:/var/lib/docker/containers
+    networks:
+      - elk
+    depends_on:
+      - logstash
 
   redis:
     image: docker.io/redis:latest

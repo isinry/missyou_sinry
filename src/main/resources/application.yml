@@ -11,19 +11,25 @@ spring:
         #use_sql_comments: true
   application:
     name: com.sinry.missyou
-
 sinry:
   api-package: com.sinry.missyou.api
   filter-map:
-
 mysql:
   ip: 192.168.1.1
   port: 3306
-
 logging:
+  file:
+#    name: springboot-loggers.log
+    path: ./logs
+    max-size: 100MB
+    max-history: 7
   config: classpath:logback-spring.xml
   level:
     root: info
 logstash:
   host: 192.168.1.105
   port: 9600
+server:
+  tomcat:
+    accesslog:
+      max-days: 5 #日志保留天数

@@ -1,0 +1,60 @@
+04:21:51.978 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 24662 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+04:21:51.983 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+04:21:52.759 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+04:21:52.760 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04:21:52.833 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61ms. Found 1 JPA repository interfaces.
+04:21:53.460 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+04:21:53.470 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+04:21:53.471 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+04:21:53.472 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+04:21:53.592 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+04:21:53.635 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1587 ms
+04:21:53.933 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+04:21:53.991 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.12.Final
+04:21:54.139 INFO  [main] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+04:21:54.245 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+04:21:54.839 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+04:21:54.862 INFO  [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+04:21:55.874 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+04:21:55.882 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04:21:56.307 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04:21:56.437 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+04:21:56.653 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+04:21:56.714 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+04:21:56.722 INFO  [main] com.sinry.missyou.DemoApplication - Started DemoApplication in 5.852 seconds (JVM running for 6.847)
+04:22:37.607 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+04:22:37.609 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+04:22:37.611 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+04:22:37.621 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+04:22:37.622 INFO  [SpringContextShutdownHook] com.sinry.filter.BaseFilter - ----- ������MDC -----
+04:22:38.783 INFO  [SpringContextShutdownHook] com.sinry.filter.BaseFilter - ----- ������MDC -----
+04:22:41.776 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 24754 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+04:22:41.781 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+04:22:42.555 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+04:22:42.556 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04:22:42.646 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72ms. Found 1 JPA repository interfaces.
+04:22:43.208 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+04:22:43.218 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+04:22:43.219 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+04:22:43.219 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+04:22:43.310 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+04:22:43.311 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1434 ms
+04:22:43.631 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+04:22:43.692 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.12.Final
+04:22:43.823 INFO  [main] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+04:22:43.950 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+04:22:44.302 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+04:22:44.330 INFO  [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+04:22:45.368 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+04:22:45.380 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04:22:45.962 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04:22:46.063 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+04:22:46.261 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+04:22:46.295 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+04:22:46.299 INFO  [main] com.sinry.missyou.DemoApplication - Started DemoApplication in 5.732 seconds (JVM running for 6.71)
+04:23:08.474 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+04:23:08.475 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+04:23:08.477 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+04:23:08.488 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+04:23:08.488 INFO  [SpringContextShutdownHook] com.sinry.filter.BaseFilter - ----- ������MDC -----
+04:23:09.664 INFO  [SpringContextShutdownHook] com.sinry.filter.BaseFilter - ----- ������MDC -----

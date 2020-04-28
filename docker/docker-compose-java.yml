@@ -22,6 +22,8 @@ services:
       - ~/project/java/work/code/missyou_sinry/target/missyou-0.0.1-SNAPSHOT.jar:/missyou_sinry.jar
       # 指定容器时间为宿主机时间
 #      - /etc/localtime:/etc/localtime
+      # 日志路径
+      - ../logs:/logs
     # 重启机制
     restart: always
     networks:
