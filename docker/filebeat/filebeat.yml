@@ -1,23 +1,16 @@
-#output:
-#  console:
-#    pretty: true
-##  elasticsearch:
-##    hosts: ["http://192.168.1.105:9200"]
-##    username: "elastic"
-##    password: "123456"
-##    path: /elasticsearch
-##output.logstash:
-##  hosts: ["http://192.168.1.105:5044"]
-##setup:
-##  kibana:
-##    host: "http://192.168.1.105:5601"
-#filebeat:
-#  inputs:
-#    - type: syslog
-#      protocol.tcp:
-#        host: "192.168.1.105:8081"
-#  config:
-#    modules:
-#      path: /usr/share/filebeat/module.d/*.yml
-#
-
+filebeat.inputs:
+  - type: log
+    paths:
+      - /var/lib/mysql/*.log
+    fields:
+      es_index: "mysql"
+#  - type: springboot
+#    hosts:
+#      - kafka-broker-1:9092
+#      - kafka-broker-2:9092
+#      topics: ["my-topic"]
+#      group_id: "filebeat"
+output.logstash:
+  hosts: ["logstash:5044"]
+#output.console:
+#  pretty: true

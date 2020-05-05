@@ -27,7 +27,7 @@ services:
     ports:
       - "5044:5044" #暴露的端口信息和docker run -d -p 80:80一样
       - "9600:9600"
-    restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
+#    restart: always #重启策略，能够使服务保持始终运行，生产环境推荐使用
     environment: #设置镜像变量，它可以保存变量到镜像里面
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
 #    command:
@@ -64,9 +64,25 @@ services:
 #      ZOO_MY_ID: 1
 #      ZOO_SERVERS: server.1=zoo1:2888:2888
 
-  kafka:
+  kafka-springboot-1:
     image: wurstmeister/kafka
-    container_name: kafka
+    container_name: kafka-springboot-1
+    links:
+      - zookeeper
+    ports:
+      - "9091:9092"
+#    volumes:
+#      - /etc/localtime:/etc/localtime
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: ${HOST}:2181
+      KAFKA_ADVERTISED_HOST_NAME: ${HOST}
+      KAFKA_ADVERTISED_PORT: 9092
+    depends_on:
+      - zookeeper
+
+  kafka-springboot-log-1:
+    image: wurstmeister/kafka
+    container_name: kafka-springboot-log-1
     links:
       - zookeeper
     ports:
@@ -88,6 +104,7 @@ services:
       - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
 #      - ~/docker/data/filebeat/module.d:/usr/share/filebeat/module.d
       - /var/lib/docker/containers:/var/lib/docker/containers
+      - ~/docker/data/mysql/db/:/var/lib/mysql/
     networks:
       - elk
     depends_on:

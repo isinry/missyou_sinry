@@ -7,10 +7,7 @@ import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoCo
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 
-@SpringBootApplication(exclude={
-        RedisAutoConfiguration.class,
-        RedisRepositoriesAutoConfiguration.class
-})
+@SpringBootApplication
 /**
  * 使用嵌入式容器时，可以使用@ServletComponentScan启用@WebServlet，@ WebFilter和@WebListener注释类的自动注册。
  */

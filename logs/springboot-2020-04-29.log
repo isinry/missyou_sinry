@@ -1,0 +1,6 @@
+00:00:20.978 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+00:00:20.980 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+00:00:20.985 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+00:00:40.075 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+00:00:40.076 INFO  [SpringContextShutdownHook] com.sinry.filter.BaseFilter - ----- ������MDC -----
+00:00:41.188 INFO  [SpringContextShutdownHook] com.sinry.filter.BaseFilter - ----- ������MDC -----

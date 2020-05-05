@@ -22,44 +22,53 @@
         </encoder>
     </appender>
 
-    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-            <destination>localhost:9600</destination>
-<!--        <destination>${logstash.host}:${logstash.port}</destination>-->
-<!--        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />-->
-        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
-            <providers>
-                <timestamp/>
-                <version/>
-                <pattern>
-                    <pattern>
-                        {
-                            "level": "%level",
-                            "logger": "%logger",
-                            "trace_id": "%X{traceId}",
-                            "app_key": "%X{app_key}",
-                            "env": "%X{env}",
-                            "host": "%X{host}",
-                            "thread_name": "%X{thread_name}",
-                            "request_uri": "%X{request_uri}",
-                            "request_path": "%X{request_path}",
-                            "request_method": "%X{request_method}",
-                            "device_type": "%X{device_type}",
-                            "user_agent": "%X{user_agent}",
-                            "message": "%msg"
-                        }
-                    </pattern>
-                </pattern>
-            </providers>
-        </encoder>
+<!--    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+<!--            <destination>localhost:9600</destination>-->
+<!--&lt;!&ndash;        <destination>${logstash.host}:${logstash.port}</destination>&ndash;&gt;-->
+<!--&lt;!&ndash;        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />&ndash;&gt;-->
+<!--        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">-->
+<!--            <providers>-->
+<!--                <timestamp/>-->
+<!--                <version/>-->
+<!--                <pattern>-->
+<!--                    <pattern>-->
+<!--                        {-->
+<!--                            "level": "%level",-->
+<!--                            "logger": "%logger",-->
+<!--                            "trace_id": "%X{traceId}",-->
+<!--                            "app_key": "%X{app_key}",-->
+<!--                            "env": "%X{env}",-->
+<!--                            "host": "%X{host}",-->
+<!--                            "thread_name": "%X{thread_name}",-->
+<!--                            "request_uri": "%X{request_uri}",-->
+<!--                            "request_path": "%X{request_path}",-->
+<!--                            "request_method": "%X{request_method}",-->
+<!--                            "device_type": "%X{device_type}",-->
+<!--                            "user_agent": "%X{user_agent}",-->
+<!--                            "message": "%msg"-->
+<!--                        }-->
+<!--                    </pattern>-->
+<!--                </pattern>-->
+<!--            </providers>-->
+<!--        </encoder>-->
 
-<!--        防止超时-->
-        <keepAliveDuration>5 minutes</keepAliveDuration>
+<!--&lt;!&ndash;        防止超时&ndash;&gt;-->
+<!--        <keepAliveDuration>5 minutes</keepAliveDuration>-->
+<!--    </appender>-->
+    <appender name="KAFKA" class="com.lyz.storm.appender.KafkaAppender">
+        <topic>foo</topic>
+        <zookeeperHost>localhost:2181</zookeeperHost>
+        <brokerList>localhost:9092</brokerList>
+        <formatter class="com.lyz.storm.formatter.impl.JsonFormatter">
+            <expectJson>false</expectJson>
+        </formatter>
     </appender>
 
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="LOGSTASH"/>
+<!--        <appender-ref ref="LOGSTASH"/>-->
         <appender-ref ref="ROLLING"/>
+        <appender-ref ref="KAFKA"/>
     </root>
 </configuration>
