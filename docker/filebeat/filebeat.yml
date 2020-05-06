@@ -3,13 +3,14 @@ filebeat.inputs:
     paths:
       - /var/lib/mysql/*.log
     fields:
-      es_index: "mysql"
-#  - type: springboot
-#    hosts:
-#      - kafka-broker-1:9092
-#      - kafka-broker-2:9092
-#      topics: ["my-topic"]
-#      group_id: "filebeat"
+      app_id: "mysql"
+  - type: kafka
+    fields:
+      app_id: "missyou_sinry"
+    hosts:
+      - kafka-springboot-log-1:9092
+    topics: ["kafka-springboot-log-1"]
+    group_id: "kafka-springboot-log-1"
 output.logstash:
   hosts: ["logstash:5044"]
 #output.console:

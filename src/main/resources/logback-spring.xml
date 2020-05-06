@@ -55,13 +55,8 @@
 <!--&lt;!&ndash;        防止超时&ndash;&gt;-->
 <!--        <keepAliveDuration>5 minutes</keepAliveDuration>-->
 <!--    </appender>-->
-    <appender name="KAFKA" class="com.lyz.storm.appender.KafkaAppender">
-        <topic>foo</topic>
-        <zookeeperHost>localhost:2181</zookeeperHost>
-        <brokerList>localhost:9092</brokerList>
-        <formatter class="com.lyz.storm.formatter.impl.JsonFormatter">
-            <expectJson>false</expectJson>
-        </formatter>
+    <appender name="KAFKA" class="com.sinry.missyou.core.kafka.logger.KafkaAppender">
+        <bootstrapServers>localhost:9092</bootstrapServers>
     </appender>
 
 

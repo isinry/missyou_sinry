@@ -36,3 +36,421 @@ ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback
 	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
 	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:318)
 	... 14 common frames omitted
+01:39:33.059 ERROR [main] o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [com.lyz.storm.appender.KafkaAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type com.lyz.storm.appender.KafkaAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@58:73 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type com.lyz.storm.appender.KafkaAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [KAFKA]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:324)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:288)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.sinry.missyou.DemoApplication.main(DemoApplication.java:18)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [com.lyz.storm.appender.KafkaAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type com.lyz.storm.appender.KafkaAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@58:73 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type com.lyz.storm.appender.KafkaAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [KAFKA]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:318)
+	... 14 common frames omitted
+01:50:24.900 ERROR [main] o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@59:16 - no applicable action for [topic], current ElementPath  is [[configuration][appender][topic]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@60:24 - no applicable action for [zookeeperHost], current ElementPath  is [[configuration][appender][zookeeperHost]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@61:21 - no applicable action for [brokerList], current ElementPath  is [[configuration][appender][brokerList]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@62:71 - no applicable action for [formatter], current ElementPath  is [[configuration][appender][formatter]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@63:25 - no applicable action for [expectJson], current ElementPath  is [[configuration][appender][formatter][expectJson]]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:324)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:288)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.sinry.missyou.DemoApplication.main(DemoApplication.java:18)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@59:16 - no applicable action for [topic], current ElementPath  is [[configuration][appender][topic]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@60:24 - no applicable action for [zookeeperHost], current ElementPath  is [[configuration][appender][zookeeperHost]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@61:21 - no applicable action for [brokerList], current ElementPath  is [[configuration][appender][brokerList]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@62:71 - no applicable action for [formatter], current ElementPath  is [[configuration][appender][formatter]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@63:25 - no applicable action for [expectJson], current ElementPath  is [[configuration][appender][formatter][expectJson]]
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:318)
+	... 14 common frames omitted
+01:51:39.758 ERROR [main] o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@59:21 - no applicable action for [brokerList], current ElementPath  is [[configuration][appender][brokerList]]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:324)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:288)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.sinry.missyou.DemoApplication.main(DemoApplication.java:18)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@59:21 - no applicable action for [brokerList], current ElementPath  is [[configuration][appender][brokerList]]
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:318)
+	... 14 common frames omitted
+01:55:08.095 ERROR [main] o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@59:21 - no applicable action for [brokerList], current ElementPath  is [[configuration][appender][brokerList]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@60:16 - RuntimeException in Action for tag [appender] java.lang.NullPointerException
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:324)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:288)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.sinry.missyou.DemoApplication.main(DemoApplication.java:18)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@59:21 - no applicable action for [brokerList], current ElementPath  is [[configuration][appender][brokerList]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@60:16 - RuntimeException in Action for tag [appender] java.lang.NullPointerException
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:318)
+	... 14 common frames omitted
+01:55:53.233 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6005 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+01:55:53.237 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+01:55:54.372 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+01:55:54.373 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01:55:54.466 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77ms. Found 1 JPA repository interfaces.
+01:55:54.488 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+01:55:54.489 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+01:55:54.510 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sinry.missyou.repository.BannerRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+01:55:54.511 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8ms. Found 0 Redis repository interfaces.
+01:55:55.348 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+01:55:55.368 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+01:55:55.371 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+01:55:55.371 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+01:55:55.492 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01:55:55.492 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2151 ms
+01:55:55.765 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:55:55.878 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.12.Final
+01:55:56.308 INFO  [main] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+01:55:56.438 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+01:55:57.156 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+01:55:57.223 INFO  [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+01:55:58.942 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01:55:58.954 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:55:59.608 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01:55:59.774 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+01:56:00.186 WARN  [main] o.s.b.s.r.RedisStarterDeprecationWarningAutoConfiguration - spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+01:56:00.213 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+01:56:00.454 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+01:56:00.457 INFO  [main] com.sinry.missyou.DemoApplication - Started DemoApplication in 8.32 seconds (JVM running for 9.342)
+01:57:32.891 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+01:57:32.892 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+01:57:32.894 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+01:57:32.901 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+01:57:32.902 INFO  [SpringContextShutdownHook] com.sinry.filter.BaseFilter - ----- 娓呴櫎MDC -----
+01:57:32.910 INFO  [SpringContextShutdownHook] com.sinry.filter.BaseFilter - ----- 娓呴櫎MDC -----
+01:57:39.961 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6012 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+02:03:29.983 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+02:03:37.167 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6060 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+02:03:51.973 WARN  [kafka-producer-network-thread | producer-1] o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Error while fetching metadata with correlation id 1 : {my-kafka=LEADER_NOT_AVAILABLE}
+02:04:56.451 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+02:05:56.459 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: 6RLJv_bnR5i3TrbEr1r0VA
+02:21:55.300 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6269 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+02:21:55.701 WARN  [kafka-producer-network-thread | producer-1] o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Error while fetching metadata with correlation id 1 : {kafka-springboot-log-1=LEADER_NOT_AVAILABLE}
+02:22:55.310 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+02:28:58.342 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6342 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+02:29:05.475 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: 6RLJv_bnR5i3TrbEr1r0VA
+02:35:26.052 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6378 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+02:35:26.619 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: 6RLJv_bnR5i3TrbEr1r0VA
+02:40:57.593 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6417 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+02:40:57.867 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: 6RLJv_bnR5i3TrbEr1r0VA
+02:46:30.349 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6497 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+02:47:22.443 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - Cluster ID: 6RLJv_bnR5i3TrbEr1r0VA
+03:03:06.298 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6592 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+03:03:11.929 WARN  [kafka-producer-network-thread | producer-1] o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] 1 partitions have leader brokers without a matching listener, including [kafka-springboot-log-1-0]
+03:05:19.320 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+03:06:19.323 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - Cluster ID: 6RLJv_bnR5i3TrbEr1r0VA
+03:09:32.676 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6658 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+03:09:32.691 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - Cluster ID: 6RLJv_bnR5i3TrbEr1r0VA
+03:12:35.988 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6699 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+03:12:36.222 WARN  [kafka-producer-network-thread | producer-1] o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] 1 partitions have leader brokers without a matching listener, including [kafka-springboot-log-1-0]
+03:13:35.998 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+03:14:36.016 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: 6RLJv_bnR5i3TrbEr1r0VA
+03:15:41.471 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6728 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+05:16:36.844 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+07:17:35.990 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+09:18:34.892 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:19:33.891 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59ms. Found 1 JPA repository interfaces.
+11:58:29.093 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+11:59:29.097 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+12:00:29.115 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sinry.missyou.repository.BannerRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+12:01:29.121 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60015ms. Found 0 Redis repository interfaces.
+12:02:29.896 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+12:03:29.909 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+12:04:29.915 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:05:29.919 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+12:06:30.023 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:07:30.027 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 17394704 ms
+12:08:30.247 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:09:16.478 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6848 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+12:10:16.492 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+12:11:17.414 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+12:12:17.420 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:13:17.494 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61ms. Found 1 JPA repository interfaces.
+12:14:17.518 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+12:15:17.522 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+12:16:17.542 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sinry.missyou.repository.BannerRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+12:17:17.543 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60011ms. Found 0 Redis repository interfaces.
+12:18:18.523 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+12:19:18.537 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+12:20:18.538 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:21:18.539 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+12:22:18.645 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:23:18.646 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 722064 ms
+12:24:18.910 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:25:18.972 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.12.Final
+12:26:19.099 INFO  [main] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+12:27:19.204 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:29:09.807 ERROR [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.sinry.missyou.DemoApplication.main(DemoApplication.java:18)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:338)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.negotiateSSLConnection(NativeAuthenticationProvider.java:777)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:486)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:202)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1340)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 49 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at com.mysql.cj.protocol.ExportControlled.performTlsHandshake(ExportControlled.java:336)
+	at com.mysql.cj.protocol.StandardSocketFactory.performTlsHandshake(StandardSocketFactory.java:188)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.performTlsHandshake(NativeSocketConnection.java:99)
+	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:329)
+	... 56 common frames omitted
+12:30:09.810 WARN  [main] o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+12:31:09.813 WARN  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+12:32:09.814 INFO  [main] com.sinry.filter.BaseFilter - ----- 娓呴櫎MDC -----
+12:33:09.819 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:34:09.820 INFO  [main] com.sinry.filter.BaseFilter - ----- 娓呴櫎MDC -----
+12:35:09.830 INFO  [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+12:36:09.846 ERROR [main] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.sinry.missyou.DemoApplication.main(DemoApplication.java:18)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	... 16 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 33 common frames omitted
+12:51:28.509 WARN  [main] o.s.boot.StartupInfoLogger - InetAddress.getLocalHost().getHostName() took 325 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+12:52:32.318 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 6996 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+12:54:23.008 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7001 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+12:54:46.481 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7004 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+12:57:23.052 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+12:58:52.770 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+13:00:16.890 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7034 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+13:02:59.543 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7037 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+13:04:40.388 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7043 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+13:05:41.325 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7052 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+13:07:26.457 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+13:46:01.151 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7230 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+13:48:10.736 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+13:48:20.850 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7262 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+13:49:22.207 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7268 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+13:50:33.644 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+13:51:38.707 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+13:52:45.851 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:53:25.882 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7291 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+13:54:35.660 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7297 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+14:00:35.032 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+14:04:08.730 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:05:33.539 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 7339 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+14:08:31.872 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+07:42:18.732 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT on 52e459eaed35 with PID 1 (/missyou_sinry.jar started by root in /)
+07:42:18.749 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: prod
+07:42:24.893 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+07:42:24.915 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07:42:25.408 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 415ms. Found 1 JPA repository interfaces.
+07:42:30.338 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07:42:30.382 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+07:42:30.407 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07:42:30.414 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+07:42:30.898 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07:42:30.900 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 11767 ms
+07:42:32.884 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07:42:33.712 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.12.Final
+07:42:34.753 INFO  [main] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+07:42:35.204 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+07:42:37.157 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+07:42:37.422 INFO  [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07:42:42.295 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07:42:42.313 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07:42:45.933 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07:42:46.536 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+07:42:47.579 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+07:42:47.749 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07:42:47.822 INFO  [main] com.sinry.missyou.DemoApplication - Started DemoApplication in 36.534 seconds (JVM running for 42.487)
+16:05:26.683 INFO  [main] com.sinry.missyou.DemoApplication - Starting DemoApplication on Sinrys-iMac.local with PID 965 (/Users/sinry/project/java/work/code/missyou_sinry/target/classes started by sinry in /Users/sinry/project/java/work/code/missyou_sinry)
+16:06:35.445 INFO  [main] com.sinry.missyou.DemoApplication - The following profiles are active: dev
+16:07:42.856 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:08:46.507 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
